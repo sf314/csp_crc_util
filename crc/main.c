@@ -8,9 +8,6 @@
 #include <csp/drivers/usart.h>
 
 #include <common.h>
-#include <server.h>
-#include <client.h>
-
 #include <calculateCrc.h>
 
 void printMenu() {
@@ -71,8 +68,6 @@ int main() {
             default:
                 printf("Unknown command \'%d\'. Try again.\n", input);
         }
-        
-        csp_sleep_ms(1000);
     }
     
     return 0;

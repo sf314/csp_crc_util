@@ -16,7 +16,6 @@ CFLAGS = \
 
 MY_SOURCES = \
 $(PROJ)/main.c \
-$(PROJ)/server.c \
 $(PROJ)/client.c \
 $(PROJ)/calculateCrc.c
 
