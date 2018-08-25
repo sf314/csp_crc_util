@@ -50,17 +50,18 @@ int main() {
     csp_packet_t* packet;
     csp_conn_t* conn;
     while (1) {
-        printf("Runloop\n");
         
         // Get input and perform action
         printMenu();
         int input;
         scanf("%d", &input);
         printf("Received %d\n", input);
+        uint32_t crc;
         switch (input) {
             case 1:
                 // Perform CRC actions
-                calculateCrc();
+                crc = calculateCrc();
+                printf("CRC was calculated to be 0x%02x\n", crc);
                 break;
             case 2:
                 exit(0);

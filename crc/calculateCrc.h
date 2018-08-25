@@ -13,7 +13,7 @@ Take input for header and data sections, place in malloc'd buffer
 Generate CSP packet, run thru CRC calculator
 Print packet, and result
 */
-void calculateCrc(void);
+uint32_t calculateCrc(void);
 
 /*
 Print given int as hex in format: 0xNN

@@ -8,7 +8,7 @@ void printHex(int val) {
     printf("0x%02x", val);
 }
 
-void calculateCrc() {
+uint32_t calculateCrc() {
     /* 1. Get info for header 
         Enter hex values , store in uint8_t array
     */
@@ -81,10 +81,15 @@ void calculateCrc() {
     printf("Packet after append: \n");
     printPacket(packet);
     
+    // Strip the 32 CRC bytes from the end of the packet and return as uint32_t
+    uint32_t crc;
+    memcpy(&crc, &(packet->data[dataSize]), 4); // Copy direction is weird, starts at end and goes backwards, cuz hey
     
     // Free yo buffers!
     csp_buffer_free(packet);
     free(data);
+    
+    return crc;
 }
 
 
